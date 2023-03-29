@@ -25,7 +25,6 @@ a.navlist {
 }
 
 .menu-btn {
-  background-color: #00d0c0;
   border: none;
   width: 2.5rem;
   height: 2.5rem;
@@ -37,21 +36,25 @@ a.navlist {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  position: relative;
 }
 
-button.menu-btn:after {
+.position {
+  position: relative;
+  background-color: #00d0c0;
+}
+
+button.position:after {
   top: 1.5rem;
   transform: rotate(0deg);
 }
 
-button.menu-btn:before {
+button.position:before {
   top: 1rem;
   transform: rotate(0deg);
 }
 
-button.menu-btn:before,
-button.menu-btn:after {
+button.position:before,
+button.position:after {
   content: "";
   background: #fff;
   height: 2px;
@@ -113,4 +116,18 @@ a.navlist:hover,
 a.navlist:active {
   color: #08494d;
   border-right: 4px solid;
+}
+
+.navbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button.theme {
+  font-size: 33px;
+  margin-right: 10px;
+  color: #000;
+  background: #e8e8e8;
+  rotate: 340deg;
 }

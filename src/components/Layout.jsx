@@ -1,4 +1,5 @@
 import "./Styles/Layout.css";
+import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -6,6 +7,7 @@ import {
   faEnvelope,
   faBriefcase,
   faChartSimple,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import { Outlet, Link } from "react-router-dom";
 import React, { useState } from "react";
@@ -16,16 +18,26 @@ export default function Layout() {
     setActive(!isActive);
   };
 
-  // const [isEnabled, setEnabled] = useState(false);
-  // const onLinkClickHandler = () => {
-  //   setEnabled(!isEnabled);
-  // };
+  const [theme, setTheme] = useState(false);
+  const onClickChangeTheme = () => {
+    setTheme(!theme);
+  };
   return (
     <>
-      <button
-        className={isActive ? "menu-btn activated" : "menu-btn"}
-        onClick={onClickHandler}
-      ></button>
+      <div className="navbtn">
+        <button
+          className={
+            isActive ? "menu-btn position activated" : "menu-btn position"
+          }
+          onClick={onClickHandler}
+        ></button>
+        <button
+          className={theme ? "menu-btn theme dark" : "menu-btn theme"}
+          onClick={onClickChangeTheme}
+        >
+          <FontAwesomeIcon icon={faMoon} />
+        </button>
+      </div>
       <nav>
         <div className="navbar">
           <ul className={isActive ? "menu-list activated" : "menu-list"}>
